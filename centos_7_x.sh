@@ -34,5 +34,5 @@ yum install -y puppet-agent > /dev/null
 echo "Puppet installed!"
 
 echo "export PATH=/opt/puppetlabs/bin:$PATH" >> ~/.bashrc
-
+source ~/.bashrc
 echo "Puppet added to path"
