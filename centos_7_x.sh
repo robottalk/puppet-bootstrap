@@ -4,7 +4,7 @@
 
 set -e
 
-REPO_URL="http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm"
+REPO_URL="http://yum.puppet.com/puppet6-release-el-7.noarch.rpm"
 
 if [ "$EUID" -ne "0" ]; then
   echo "This script must be run as root." >&2
@@ -29,6 +29,10 @@ rpm -i "${repo_path}" >/dev/null
 
 # Install Puppet...
 echo "Installing puppet"
-yum install -y puppet > /dev/null
+yum install -y puppet-agent > /dev/null
 
 echo "Puppet installed!"
+
+echo "export PATH=/opt/puppetlabs/bin:$PATH" >> ~/.bashrc
+
+echo "Puppet added to path"
